@@ -1,0 +1,39 @@
+@import "colors";
+@import "resolution";
+
+@mixin div-coder ($color,$text) {
+    background: $color;
+    color: $text;
+    @include margin(7px);
+}
+@mixin margin ($valor) {
+    margin: $valor;
+}
+
+@for $i from 1 to 4{
+  .item#{$i} {
+    background: $grey-color;
+    @include margin(7px);
+    color: $white-color;
+  }
+}
+.item4{
+  @extend .item1;
+  background: $primary-color;
+}
+
+body{
+  .header{
+    box-sizing: border-box;
+    background: $primary-color;
+  }
+  ul.menu{
+
+     @media (min-width: 600px) {
+       width: 25%;
+    }
+  }
+  .coders .coder{
+    @include  div-coder($grey-color,$white-color);
+  }
+}

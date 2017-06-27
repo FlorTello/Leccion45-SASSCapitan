@@ -1,0 +1,9 @@
+$primary-color: rgba(257,180,37,1);
+$grey-color: rgba(62,63,64,1);
+$white-color: rgba(255,255,255,1);
+
+@mixin menu ($color,$text) {
+    background: $color;
+    color: $text;
+    margin: 7px;
+}
