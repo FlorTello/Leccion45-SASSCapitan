@@ -5,6 +5,7 @@
 }
 
 [class*="col-"] {
+    float: left;
     padding: 15px;
 }
 
@@ -13,14 +14,13 @@
     clear: both;
     display: table;
 }
-$grid-columns: 12;
 $width:100% ;
-@for $i from 1 through $grid-columns {
-  .col-#{$i} {width:  $i * $width / $grid-columns}
-}
-
-ul.menu{
-   @media (max-width: 600px) {
-     width: 25%;
-  }
+   $grid-columns: 9;
+   @for $i from 1 through $grid-columns {
+     .col-#{$i} {width:  $i * $width / $grid-columns}
+   }
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
 }

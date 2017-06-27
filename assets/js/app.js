@@ -1,5 +1,5 @@
 const MostrarCoders = (coders) =>{
-  const div = $('<div class="coder col-12"></div>');
+  const div = $('<div class="coder "></div>');
   const name = $('<li> Nombre: '+coders.name+'  <input type="checkbox"> </li>');
   const squad = $('<p>'+coders.squad.name+'</p>');
   div.append(name,squad);

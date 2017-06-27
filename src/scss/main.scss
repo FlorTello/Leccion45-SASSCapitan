@@ -1,9 +1,11 @@
 @import "colors";
 @import "resolution";
+@import "fonts";
 
 @mixin div-coder ($color,$text) {
     background: $color;
     color: $text;
+    @include margin(7px);
     @include margin(7px);
 }
 @mixin margin ($valor) {
@@ -27,6 +29,11 @@
 }
 
 body{
+  box-sizing: border-box;
+  @include margin(0);
+  @include padding(0);
+  font-size: $font-base;
+  font-family: $font-text;
   .header{
     box-sizing: border-box;
     background: $primary-color;
