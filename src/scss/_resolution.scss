@@ -5,9 +5,7 @@
 }
 
 [class*="col-"] {
-    float: left;
     padding: 15px;
-    border: 1px solid red;
 }
 
 .row::after {
@@ -15,8 +13,15 @@
     clear: both;
     display: table;
 }
-$width:100%;
 $grid-columns: 12;
-@for $i from $grid-columns through 1 {
-  .col-#{$i} {width: $width / $i;}
+$width:100% ;
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {width:  $i * $width / $grid-columns}
+}
+
+ul.menu{
+
+   @media (max-width: 600px) {
+     width: 25%;
+  }
 }

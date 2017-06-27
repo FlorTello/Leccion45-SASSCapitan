@@ -9,11 +9,15 @@
 @mixin margin ($valor) {
     margin: $valor;
 }
+@mixin padding ($valor) {
+    padding: $valor;
+}
 
 @for $i from 1 to 4{
   .item#{$i} {
     background: $grey-color;
     @include margin(7px);
+    @include padding(7px);
     color: $white-color;
   }
 }
@@ -26,14 +30,29 @@ body{
   .header{
     box-sizing: border-box;
     background: $primary-color;
+    @include padding(7px);
   }
-  ul.menu{
 
-     @media (min-width: 600px) {
-       width: 25%;
-    }
-  }
   .coders .coder{
     @include  div-coder($grey-color,$white-color);
+    @include padding(7px);
+    li {
+      list-style: none;
+    }
   }
+}
+.container {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+[class*="col-"] {
+    padding: 15px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
 }
